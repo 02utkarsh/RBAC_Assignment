@@ -17,28 +17,20 @@ The **RBAC System** is a full-stack web application for managing users, roles, a
    ```bash
    cd frontend
 Install dependencies:
-bash
-Copy code
 npm install
+
 Start the development server:
-bash
-Copy code
 npm run dev
+
 2. Setting Up the Backend
 Navigate to the backend folder:
-
-bash
-Copy code
 cd backend
+
 Install dependencies:
 
-bash
-Copy code
 npm install
 Create a .env file in the backend directory with the following contents:
 
-plaintext
-Copy code
 DATABASE_URL=your_postgresql_database_url
 JWT_SECRET=your_jwt_secret
 ADMIN_EMAIL=your_admin_email
@@ -48,10 +40,8 @@ Replace the placeholders with:
 DATABASE_URL: Your PostgreSQL database connection string.
 JWT_SECRET: A secret key for encrypting and decrypting JWT tokens.
 ADMIN_EMAIL and ADMIN_PASSWORD: Default admin credentials for logging in.
-Start the backend server:
 
-bash
-Copy code
+Start the backend server:
 npm run dev
 3. Setting Up the Database
 Ensure PostgreSQL is installed and running.
@@ -60,8 +50,6 @@ Create a new database and note the connection URL to use in the .env file.
 
 In most cases, the required tables and schema are created automatically. If not, execute the following SQL query in your PostgreSQL database to manually create the User table:
 
-sql
-Copy code
 CREATE TYPE "Role" AS ENUM ('USER', 'SUPER_USER', 'ADMIN');
 
 CREATE TABLE "User" (
@@ -88,8 +76,6 @@ Use the default admin credentials defined in the .env file:
 
 Email: ADMIN_EMAIL
 Password: ADMIN_PASSWORD
-vbnet
-Copy code
 
 ### Explanation:
 - The project setup is divided into clear sections for **Frontend**, **Backend**, and **Database** setup.
