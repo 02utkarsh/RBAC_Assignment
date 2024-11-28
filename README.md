@@ -16,40 +16,51 @@ The **RBAC System** is a full-stack web application for managing users, roles, a
 1. Navigate to the `frontend` folder:
    ```bash
    cd frontend
-Install dependencies:
-npm install
+2. Install dependencies:
+```bash
+   npm install
+```
+3.Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-Start the development server:
-npm run dev
-
-2. Setting Up the Backend
+### 2. Setting Up the Backend
 Navigate to the backend folder:
+```bash
 cd backend
-
+```
 Install dependencies:
-
+```bash
 npm install
-Create a .env file in the backend directory with the following contents:
+```
 
+Create a .env file in the backend directory with the following contents:
+```bash
 DATABASE_URL=your_postgresql_database_url
 JWT_SECRET=your_jwt_secret
 ADMIN_EMAIL=your_admin_email
 ADMIN_PASSWORD=your_admin_password
 Replace the placeholders with:
-
+```
+```bash
 DATABASE_URL: Your PostgreSQL database connection string.
 JWT_SECRET: A secret key for encrypting and decrypting JWT tokens.
 ADMIN_EMAIL and ADMIN_PASSWORD: Default admin credentials for logging in.
+```
 
 Start the backend server:
+```bash
 npm run dev
+```
 3. Setting Up the Database
+```bash
 Ensure PostgreSQL is installed and running.
 
 Create a new database and note the connection URL to use in the .env file.
-
+```
 In most cases, the required tables and schema are created automatically. If not, execute the following SQL query in your PostgreSQL database to manually create the User table:
-
+```bash
 CREATE TYPE "Role" AS ENUM ('USER', 'SUPER_USER', 'ADMIN');
 
 CREATE TABLE "User" (
@@ -64,12 +75,17 @@ CREATE TABLE "User" (
 );
 
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+```
 The project includes a default admin account pre-configured in the .env file. Use the following credentials for the initial admin login:
-
+```bash
 Email: ADMIN_EMAIL (from .env).
 Password: ADMIN_PASSWORD (from .env).
+```
 4. Running the Project
-Start both frontend and backend servers as described above.
+Start both frontend and backend servers(seperately) using:
+```bash
+npm run dev
+```
 Access the application in your browser at http://localhost:<frontend_port> (default port is typically 3000).
 Admin Login
 Use the default admin credentials defined in the .env file:
@@ -86,7 +102,8 @@ Password: ADMIN_PASSWORD
 
 This version will render well on GitHub with proper sectioning, code blocks, and formatting.
 
-
+5. The Demovideo:
+   https://drive.google.com/file/d/1MG-kZl2tmbO2ZGFiHzRSzOZaGebEwMq5/view?usp=drive_link
 
 
 
